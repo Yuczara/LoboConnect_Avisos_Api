@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loboc_avisos/pages/detalle_aviso.dart';
 import 'package:loboc_avisos/pages/home_api.dart';
+import 'package:loboc_avisos/pages/home_page.dart';
 import 'package:loboc_avisos/pages/message_page.dart';
 import 'package:loboc_avisos/services/push_notification_service.dart';
 
@@ -34,11 +35,11 @@ class _MyAppState extends State<MyApp>{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'home',
-      initialRoute: 'home2',
+      initialRoute: 'home',
       routes: {
-        //'home': (_) => HomePage(),
-        'home2':(_) => HomeApiPage(),
-        'detalle':(_)=> AvisoDetalle(),
+        'home': (_) => HomePage(),
+       // 'home2':(_) => HomeApiPage(),
+        //'detalle':(_)=> AvisoDetalle(),
       },
       
     );

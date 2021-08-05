@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:loboc_avisos/models/aviso.dart';
 
 class AvisoView extends StatefulWidget {
@@ -44,7 +44,7 @@ class _AvisoViewState extends State<AvisoView> {
                   child: Text(
                   widget.aviso.titulo,
                   style: TextStyle(
-                    fontSize: 22.0,
+                    fontSize: 30.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.teal,
                     letterSpacing :1.0,
@@ -59,7 +59,7 @@ class _AvisoViewState extends State<AvisoView> {
                   child: Text(
                   widget.aviso.descripcion,
                   style: TextStyle(
-                    fontSize: 16.0,
+                    fontSize: 20.0,
                     letterSpacing :0.9,
                   ),
                   textAlign:TextAlign.justify,
@@ -71,4 +71,3 @@ class _AvisoViewState extends State<AvisoView> {
       );
   }
 }
-*/

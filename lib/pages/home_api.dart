@@ -1,4 +1,4 @@
-import 'dart:async';
+/*import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:loboc_avisos/Widgets/list_avisos.dart';
 import 'package:loboc_avisos/pages/message_page.dart';
@@ -27,7 +27,7 @@ class _HomeApiPageState extends State<HomeApiPage> {
   
   @override
   Widget build(BuildContext context) {
-
+  
     avisosProvider.procesarRespuesta();
     return Scaffold(
       appBar: AppBar( 
@@ -43,9 +43,8 @@ class _HomeApiPageState extends State<HomeApiPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            SizedBox(height:14.0),
-            _Tarjetas(),
-            
+            //SizedBox(height:14.0),
+            Tarjetas(),            
           ],
         ),
       ),
@@ -54,7 +53,9 @@ class _HomeApiPageState extends State<HomeApiPage> {
   }
   
 
-  Widget _Tarjetas() {
+  Widget Tarjetas() {    
+    final _screenSize = MediaQuery.of(context).size;
+
     avisosProvider.procesarRespuesta();
     return RefreshIndicator(
       onRefresh: _pullRefresh,
@@ -64,20 +65,18 @@ class _HomeApiPageState extends State<HomeApiPage> {
         if(snapshot.hasData){
           return ShowAvisos(avisosList: snapshot.data);
         }else{
-          return Container(            
+          return SizedBox(  
+            height: _screenSize.height*0.90,
             child:  Column(  
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Align(
                   alignment: Alignment.center,
-                  child: Icon(Icons.signal_wifi_connected_no_internet_4_rounded,color: Colors.teal,size:80),
+                  child:  CircularProgressIndicator(
+                    backgroundColor: Colors.green,
+                    valueColor: new AlwaysStoppedAnimation<Color>(Colors.indigo[900]),
+                  ),
                 ),
-              Text(
-               "Opps!! Ocurrió un error",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 30.0, color: Colors.grey,fontWeight: FontWeight.bold)
-               ),
-               
               ],
             ),           
           );
@@ -90,10 +89,11 @@ class _HomeApiPageState extends State<HomeApiPage> {
 
     Future<void> _pullRefresh() async {
     setState(() {
-      _Tarjetas();
+      Tarjetas();
     });
   }
 
  }
 
 
+*/

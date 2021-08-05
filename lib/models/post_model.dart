@@ -1,4 +1,4 @@
-class Avisos {
+/*class Avisos {
 
   List<Aviso> items = new List();
 
@@ -41,3 +41,4 @@ class Aviso {
 
 
 }
+*/

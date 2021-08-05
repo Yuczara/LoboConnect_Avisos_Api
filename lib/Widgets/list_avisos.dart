@@ -1,4 +1,4 @@
-import 'package:firebase_database/firebase_database.dart';
+/*import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:loboc_avisos/models/post_model.dart';
 import 'package:loboc_avisos/pages/home_api.dart';
@@ -11,7 +11,8 @@ class ShowAvisos extends StatelessWidget {
   Widget build(BuildContext context) {
     final _screenSize = MediaQuery.of(context).size;
 
-    return Flexible(
+    if(avisosList.isNotEmpty){
+       return Flexible(
     child: Row(
       children: <Widget>[
         Expanded(
@@ -29,6 +30,32 @@ class ShowAvisos extends StatelessWidget {
       ],
     ),
    );
+
+    }else{
+      return  SizedBox(  
+            height: _screenSize.height*0.90,
+            child:  Column(  
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.center,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.indigo[900],
+                    radius: 60,
+                    child: Icon(Icons.done_outline_rounded,size: 50,color: Colors.lightGreen,),
+                 ),
+                ),
+                SizedBox(height: 20.0,),
+               Text(
+                    "No tienes avisos",
+                    textAlign: TextAlign.center,
+                     style: TextStyle(fontSize: 25.0, color: Colors.indigo[900],fontWeight: FontWeight.w300,)
+                  ),
+              ],
+            ),           
+          );
+    }
+
   }
 }
 
@@ -64,4 +91,4 @@ Widget _tarjeta(BuildContext context,Aviso aviso){
           Navigator.pushNamed(context,'detalle',arguments: aviso);
         },
       );
-  }
+  }*/

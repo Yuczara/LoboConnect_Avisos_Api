@@ -1,4 +1,4 @@
-/*import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/firebase_database.dart';
 class Aviso{
 
   static const KEY = "key";
@@ -39,4 +39,4 @@ class Aviso{
   Map toMap(){
     return {DEPARTAMENTO: departamento ,DESCRIPCION:descripcion, EMAIL: email, FECHAMODIFICACION:fechaModificacion, FECHAPARAORDENAR:fechaParaOrdenar, FECHAPUBLICACION:fechaPublicacion, KEY: key};
   }
-}*/
+}

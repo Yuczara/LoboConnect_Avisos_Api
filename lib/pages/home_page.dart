@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:loboc_avisos/models/aviso.dart';
@@ -37,11 +37,14 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("Avisos"),
+        title: Text("Notificaciones", style: TextStyle(fontWeight: FontWeight.w200)),
         backgroundColor: Colors.indigo.shade900,
         centerTitle: true,
+        
       ),
       body: Container(
         color: Colors.teal.shade100,
@@ -49,14 +52,29 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Visibility(
               visible: avisoList.isEmpty,
-              child: Center(
+              child: Center(                
                 child: Container(
+                  height: _screenSize.height*0.65,
                   alignment: Alignment.center,
-                  child: Text(
-                                  "No tienes avisos",
-                                  style: TextStyle(fontSize: 25.0, color: Colors.blueGrey,height:15.0),
-                                ),
-                  //child: CircularProgressIndicator(),
+                  child: Column(  
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Align(
+                          alignment: Alignment.center,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.indigo[900],
+                            radius: 60,
+                            child: Icon(Icons.done_outline_rounded,size: 50,color: Colors.lightGreen,),
+                        ),
+                        ),
+                        SizedBox(height: 20.0,),
+                      Text(
+                            "No tienes avisos",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 25.0, color: Colors.indigo[900],fontWeight: FontWeight.w300,)
+                          ),
+                      ],
+                    ),        
                 ),
               ),
             ),
@@ -72,27 +90,32 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Card(
                             child: ListTile(
-                              title: ListTile(
                                 onTap: (){
                                   Navigator.push(context, MaterialPageRoute(builder: (context) => AvisoView(avisoList.reversed.toList()[index])));
                                 },
-                                title: Text(
-                                  avisoList.reversed.toList()[index].titulo,
-                                  style: TextStyle(
-                                      fontSize: 22.0, fontWeight: FontWeight.bold),
+                               leading: Padding(
+                                 padding: const EdgeInsets.only(top:6.0, bottom: 5.0),
+                                 child: Icon(Icons.notifications_none_outlined,size:30.0,color: Colors.amber),
+                               ),
+                                title: Padding(
+                                  padding: const EdgeInsets.only(top: 3.0),
+                                  child: Text(
+                                    avisoList.reversed.toList()[index].titulo,
+                                    style: TextStyle(
+                                        fontSize: 20.0, fontWeight: FontWeight.w500),
+                                  ),
                                 ),
                                 trailing: Text(
                                   avisoList.reversed.toList()[index].fechaPublicacion,
-                                  style: TextStyle(fontSize: 14.0, color: Colors.grey),
+                                  style: TextStyle(fontSize: 14.0, color: Colors.blueGrey),
                                 ),
-                              ),
-                              subtitle: Padding(
-                                padding: const EdgeInsets.only(bottom: 14.0),
-                                child: Text(avisoList.reversed.toList()[index].descripcion, style: TextStyle(fontSize: 18.0),),
+                                subtitle: Padding(
+                                  padding: const EdgeInsets.only(bottom: 14.0,top: 4.0),
+                                  child: Text(avisoList.reversed.toList()[index].descripcion, style: TextStyle(fontSize: 18.0),),
+                               ),
                               ),
                             ),
-                          ),
-                        );
+                          );
                       })),
             )
           ],
@@ -130,29 +153,4 @@ class _HomePageState extends State<HomePage> {
 }
 
 
-//avisoList.reversed.toList()[index]*/
-
-import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
- 
-void main() => runApp(Home_Page());
- 
-class Home_Page extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//avisoList.reversed.toList()[index]

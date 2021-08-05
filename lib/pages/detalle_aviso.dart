@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:loboc_avisos/models/post_model.dart';
 
 class AvisoDetalle extends StatelessWidget {
@@ -46,7 +46,7 @@ class AvisoDetalle extends StatelessWidget {
               ),      ),
 
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(23.0),
               child: Container(
                   child: Text(
                   aviso.descripcion,
@@ -63,3 +63,4 @@ class AvisoDetalle extends StatelessWidget {
     );
   }
 }
+*/

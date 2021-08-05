@@ -1,4 +1,4 @@
-import 'dart:async';
+/*import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:loboc_avisos/models/post_model.dart';
@@ -18,4 +18,4 @@ class AvisosProvider {
     return avisos.items;
   }
 
-}
+}*/
